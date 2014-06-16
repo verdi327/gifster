@@ -1,4 +1,4 @@
-Gifster.controller "UsersController", ($scope, $http, User) ->
+Gifster.controller "UsersController", ($scope, User) ->
   newFormHeader = "Add New User"
   $scope.formHeader = newFormHeader
   $scope.getUsers = () ->
