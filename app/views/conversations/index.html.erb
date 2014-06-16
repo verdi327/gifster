@@ -1,0 +1,28 @@
+<div ng-app="Gifster" ng-controller="ConversationsController" ng-init="conversations=<%=@conversations_json.to_json%> ;user_id=<%=@user_id.to_json%>">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Start A New Conversation</h2>
+      <form ng-submit="save()">
+        <div class="form-group">
+          <label>Add Friend</label>
+          <input type="text" class="form-control" ng-model="friend" />
+        </div>
+        <button class="btn btn-primary">
+          Save
+        </button>
+      </form>
+
+
+      <h1>Conversations</h1>
+      <ul>
+        <li ng-repeat="conversation in conversations">
+          Last Activity {{conversation.updated_at}}
+          <div class="btn btn-default" ng-click="delete(conversation, $index)">
+            <%= fa_icon "trash-o" %>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+

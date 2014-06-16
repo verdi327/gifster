@@ -1,5 +1,10 @@
 Gifster::Application.routes.draw do
-  resources :users
+
+  resources :friendships
+  resources :users do
+    resources :conversations
+    resources :friends
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

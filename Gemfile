@@ -23,6 +23,7 @@ gem "font-awesome-rails"
 
 gem "rack-cors"
 gem "active_model_serializers"
+gem "giphy"
 
 
 # Use ActiveModel has_secure_password

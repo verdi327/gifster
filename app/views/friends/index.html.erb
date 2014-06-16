@@ -1,0 +1,26 @@
+<div ng-app="Gifster" ng-controller="FriendsController" ng-init="friends=<%= @friends_json %>; user_id=<%= @user_id %>">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Add a Friend</h2>
+      <form ng-submit="save()">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="text" class="form-control" ng-model="friend.email" />
+        </div>
+        <button class="btn btn-primary">
+          Add
+        </button>
+      </form>
+
+
+      <h1>Friend's List</h1>
+      <ul>
+        <li ng-repeat="friend in friends">
+          {{friend.first_name}} {{friend.last_name}}
+          <a ng-click="delete(friend, $index)">unfriend</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
